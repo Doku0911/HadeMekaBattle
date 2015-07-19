@@ -19,10 +19,6 @@ public class LockOnSystem : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            SetTargetWithTag("Player");
-        }
 
         if (target == null) return;
 
