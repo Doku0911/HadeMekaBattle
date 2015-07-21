@@ -8,8 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 467984}
-  - 114: {fileID: 11429828}
-  - 114: {fileID: 11400924}
   - 148: {fileID: 14887112}
   - 114: {fileID: 11454254}
   - 114: {fileID: 11444670}
@@ -32,31 +30,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11400924
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5593fda86cbb2ad4487df06a9ae763f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11429828
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50091075b6bce714bbcd73abc4eee722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectName: EnergyFiring
-  playOnStart: 1
-  loop: 0
 --- !u!114 &11444670
 MonoBehaviour:
   m_ObjectHideFlags: 1

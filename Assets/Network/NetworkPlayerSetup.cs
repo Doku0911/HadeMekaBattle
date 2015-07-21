@@ -8,15 +8,14 @@ public class NetworkPlayerSetup : MonoBehaviour {
     NetworkView myNetworkView = null;
     GameObject enemyManager = null;
     AttachCamera attachCamera = null;
-
-    [SerializeField]
-    GameObject initEffect = null;
+    NetworkManagerSetup networkManagerSetup = null;
 
     // Use this for initialization
 	void Start () {
         myNetworkView = GetComponent<NetworkView>();
         sceneCamera =  GameObject.Find("Scene Camera");
         enemyManager = GameObject.Find("EnemyManager");
+        networkManagerSetup = GameObject.FindObjectOfType<NetworkManagerSetup>();
         attachCamera = GetComponent<AttachCamera>();
 
         OpponentDestroy();
@@ -24,14 +23,14 @@ public class NetworkPlayerSetup : MonoBehaviour {
         if(sceneCamera != null)
             sceneCamera.SetActive(false);
 
-        if (myNetworkView.isMine)
+        transform.FindChild("Main Camera").parent = null;
+
+        if (!networkManagerSetup.IsNetworking || myNetworkView.isMine)
         {
-            transform.FindChild("Main Camera").parent = null;
             attachCamera.Initialize();
             attachCamera.Attach();
         }
 
-        EffekseerEmitter.Create(initEffect,Vector3.zero);
 
 	}
 
@@ -40,7 +39,7 @@ public class NetworkPlayerSetup : MonoBehaviour {
     /// </summary>
     void OpponentDestroy()
     {
-        if (!myNetworkView.isMine)
+        if (networkManagerSetup.IsNetworking && !myNetworkView.isMine)
         {
             tag = "Enemy";
             Destroy(GetComponent<PlayerMover>());

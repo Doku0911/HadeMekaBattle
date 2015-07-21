@@ -50,7 +50,6 @@ public class TargetSystem : MonoBehaviour {
         ///削除
         InsideObjects.Clear();
 
-
         foreach (var enemy in enemyListManager.GetEnemyList())
         {
             var enemyScreenPoint = Camera.main.WorldToScreenPoint(enemy.transform.position);

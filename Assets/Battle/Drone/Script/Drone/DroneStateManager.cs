@@ -81,7 +81,7 @@ public class DroneStateManager : MonoBehaviour
         //Debug.Log("Parent:" + Clone.name);
         //Debug.Log("State->" + dollState);
 
-        if (IsStop) Network.Destroy(gameObject);
+        if (IsStop) NetworkUtility.GameObjectDestroy(gameObject);
 
         //ChangeOwner();
         //Debug.Log("Owner is->" + owner);

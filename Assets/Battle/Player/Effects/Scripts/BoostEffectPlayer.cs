@@ -8,10 +8,6 @@ public class BoostEffectPlayer : MonoBehaviour {
     List<ParticleSystem> particleSystem = new List<ParticleSystem>();
 
 
-    void PlayParticle(int emissionRate)
-    {
-    }
-
     /// <summary>
     /// 再生する
     /// </summary>

@@ -13,7 +13,7 @@ public class QuickBoostEffectCreator : MonoBehaviour {
 
     public void Play()
     {
-        var clone = (GameObject)Network.Instantiate(effect,Vector3.zero,Quaternion.identity,0);
+        var clone = (GameObject)NetworkUtility.GameObjectInstantiate(effect,Vector3.zero,Quaternion.identity,0);
         clone.transform.SetParent(transform);
         clone.transform.position = transform.position;
         clone.transform.rotation = transform.rotation;
@@ -25,6 +25,6 @@ public class QuickBoostEffectCreator : MonoBehaviour {
     {
         yield return new WaitForSeconds(clone.GetComponent<ParticleSystem>().startLifetime);
 
-        Network.Destroy(clone);
+        NetworkUtility.GameObjectDestroy(clone);
     }
 }

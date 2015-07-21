@@ -8,7 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 441998}
-  - 148: {fileID: 14848794}
   - 114: {fileID: 11477312}
   - 114: {fileID: 11459688}
   - 198: {fileID: 19831302}
@@ -84,18 +83,6 @@ MonoBehaviour:
     i15: 206
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!148 &14848794
-NetworkView:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155936}
-  m_Enabled: 1
-  m_StateSynchronization: 1
-  m_Observed: {fileID: 441998}
-  m_ViewID:
-    m_ID: 0
-    m_Type: 0
 --- !u!198 &19831302
 ParticleSystem:
   m_ObjectHideFlags: 1
