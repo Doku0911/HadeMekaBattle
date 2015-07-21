@@ -25,7 +25,13 @@ public class BulletShooter : MonoBehaviour {
 
     private int bulletNumber = 100;             // 残段数
     private int maxBulletNumber = 100;
-    private GameObject retBullet;
+    private List<GameObject> createdBulletList = new List<GameObject>();
+
+    /// <summary>
+    /// 無限に弾が打てるかどうか
+    /// true...無限に弾が打ない false...打てる
+    /// </summary>
+    public bool HasLimit { get; set; }
 
     /// <summary>
     /// プレイヤの座標との相対的な武器の位置
@@ -34,6 +40,11 @@ public class BulletShooter : MonoBehaviour {
     Vector3 weaponPosition = Vector3.zero;
 
     private GameObject effect;                  // エフェクトのプレハブ
+
+    void Awake()
+    {
+        HasLimit = false;
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -103,27 +114,31 @@ public class BulletShooter : MonoBehaviour {
     }
 
 	// ショットを打つ(基本外部使用限定)
-	public GameObject CreateBullet()
+	public List<GameObject> CreateBullet()
 	{
+        createdBulletList.Clear();
+
         // 残段数がなければ処理をしない
         if (bulletNumber > 0)
         {
+
             // クリエイトタイマーを増加させる
             createTimer += Time.deltaTime;
 
             // タイマーがインターバル値を超えたら生成する処理を呼ぶ
             while (createTimer >= createInterval)
             {
-                retBullet = null;
-                if (bulletNumber > 0 || bulletNumber <= -100)
+                createdBulletList.Add(Create());
+
+                if (HasLimit)
                 {
-                    retBullet = Create();
-                    if(bulletNumber > 0) bulletNumber--;
+                    --bulletNumber;
                 }
+
                 createTimer -= createInterval;	
             }
         }
-        return retBullet;
+        return createdBulletList;
 	}
 
 	// 弾を生成する
@@ -298,7 +313,7 @@ public class BulletShooter : MonoBehaviour {
     // 弾追加
     public void AddAmmo(int _num) 
     {
-        bulletNumber = _num;
+        bulletNumber += _num;
     }
 
     // 弾数取得
@@ -307,16 +322,4 @@ public class BulletShooter : MonoBehaviour {
         return bulletNumber; 
     }
 
-    // 発射制限の変更
-    public void SwitchBulletShooter() 
-    {
-        if (bulletNumber <= -100)
-        {
-            bulletNumber = maxBulletNumber;
-        }
-        else 
-        {
-            bulletNumber = -100;
-        }
-    }
 }

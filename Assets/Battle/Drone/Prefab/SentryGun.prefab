@@ -60,6 +60,10 @@ GameObject:
   - 33: {fileID: 3353234}
   - 23: {fileID: 2320776}
   - 114: {fileID: 11402030}
+  - 135: {fileID: 13590838}
+  - 114: {fileID: 11425978}
+  - 114: {fileID: 11454104}
+  - 114: {fileID: 11489514}
   m_Layer: 0
   m_Name: sentrygun_upper
   m_TagString: Untagged
@@ -210,7 +214,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rotateEulerMaxY: 80
-  upperEulerMax: 9
+  upperEulerMax: 45
+--- !u!114 &11425978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d34c43d0c72a77429796316723ebc7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyRatio: 0
+--- !u!114 &11454104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afeb22fd5591b74eb62d12a616bc7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11489514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e314abf31918e4b4aaa3cb20a0b4fe8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  weaponPosition: {x: 2, y: .340000004, z: 2}
+--- !u!135 &13590838
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: .400000006
+  m_Center: {x: .0264861118, y: .0162858777, z: -.00236837752}
 --- !u!136 &13658546
 CapsuleCollider:
   m_ObjectHideFlags: 1

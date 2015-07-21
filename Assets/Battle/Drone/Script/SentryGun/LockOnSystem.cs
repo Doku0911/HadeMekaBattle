@@ -7,6 +7,8 @@ public class LockOnSystem : MonoBehaviour {
     [SerializeField]
     Transform target = null;
 
+    float zoneRange = 0.0f;
+
     [SerializeField, Tooltip("１フレームあたりに回転する最大角度")]
     float rotateEulerMaxY = 20.0f;
 
@@ -16,24 +18,22 @@ public class LockOnSystem : MonoBehaviour {
     /// </summary>
     float addEuler = 90;
 
-	// Update is called once per frame
-	void Update () 
-    {
-
-        if (target == null) return;
-
-
-        Vartical();
-
-        Horizontal();
-        
-	}
-
     /// <summary>
     /// 見上げられる最大値
     /// </summary>
     [SerializeField,Tooltip("見上げられる角度の最大")]
     float upperEulerMax = 9.0f;
+
+
+    void Start()
+    {
+        zoneRange = GetComponent<SphereCollider>().radius * transform.parent.localScale.x;
+    }
+
+    void Update()
+    {
+        Aim();
+    }
 
 
     /// <summary>
@@ -101,6 +101,24 @@ public class LockOnSystem : MonoBehaviour {
     public void SetTargetWithTag(string _tag)
     {
         target = GameObject.FindGameObjectWithTag(_tag).GetComponent<Transform>();
+    }
+
+
+    public bool IsInside()
+    {
+        if (target == null) return false;
+        if (Vector3.Distance(transform.position, target.position) > zoneRange) return false;
+
+        return true;
+    }
+
+    void Aim()
+    {
+        if (!IsInside()) return;
+
+        Vartical();
+
+        Horizontal();       
     }
 
 
