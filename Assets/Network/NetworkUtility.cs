@@ -5,7 +5,7 @@ public class NetworkUtility : MonoBehaviour {
 
     static NetworkManagerSetup networkManager = null;
 
-    void Start()
+    void Awake()
     {
         networkManager = GetComponent<NetworkManagerSetup>();
     }

@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  weaponPosition: {x: -1.5, y: 1, z: 1.5}
+  weaponPosition: {x: -1.5, y: 1, z: -1.5}
 --- !u!114 &11421810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -433,8 +433,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 466392}
   moveSpeed: 4
-  distanceFromTarget: -6
-  addHeight: 5
+  distanceFromTarget: -6.28999996
+  addHeight: 2
   moveStartTime: 5
 --- !u!114 &11425138
 MonoBehaviour:
@@ -691,6 +691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ed8c338c6238f4396b5d748dce4825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxUpperAngle: .5
+  MinDownerAngle: -.5
 --- !u!114 &11463666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3042,7 +3044,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: addHeight
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
@@ -3083,6 +3085,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: id
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: weaponPosition.z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OcclusionCulling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: distanceFromTarget
+      value: -6.28999996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
