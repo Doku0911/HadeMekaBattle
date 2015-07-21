@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494060}
-  - 114: {fileID: 11431078}
-  - 114: {fileID: 11451254}
+  - 114: {fileID: 11436996}
+  - 114: {fileID: 11464306}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11431078
+--- !u!114 &11436996
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -37,55 +37,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 137150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -822479833, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Script: {fileID: 11500000, guid: a1349bce0c1eba4448b2bee86382d70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NetworkPort: 7777
-  m_NetworkAddress: localhost
-  m_DontDestroyOnLoad: 1
-  m_RunInBackground: 1
-  m_SendPeerInfo: 0
-  m_MaxDelay: .00999999978
-  m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 130908, guid: 8f3fea2b5b22c954892b46b9c384fd5c, type: 2}
-  m_AutoCreatePlayer: 1
-  m_PlayerSpawnMethod: 0
-  m_OfflineScene: 
-  m_OnlineScene: 
-  m_SpawnPrefabs:
-  - {fileID: 130908, guid: 8f3fea2b5b22c954892b46b9c384fd5c, type: 2}
-  m_CustomConfig: 0
-  m_MaxConnections: 4
-  m_ConnectionConfig:
-    m_PacketSize: 1500
-    m_FragmentSize: 500
-    m_ResendTimeout: 1200
-    m_DisconnectTimeout: 2000
-    m_ConnectTimeout: 2000
-    m_MinUpdateTimeout: 10
-    m_PingTimeout: 500
-    m_ReducedPingTimeout: 100
-    m_AllCostTimeout: 20
-    m_NetworkDropThreshold: 5
-    m_OverflowDropThreshold: 5
-    m_MaxConnectionAttempt: 10
-    m_AckDelay: 33
-    m_MaxCombinedReliableMessageSize: 100
-    m_MaxCombinedReliableMessageCount: 10
-    m_MaxSentMessageQueueSize: 128
-    m_IsAcksLong: 0
-    m_Channels: []
-  m_Channels: 
-  m_UseSimulator: 0
-  m_SimulatedLatency: 1
-  m_PacketLossPercentage: 0
-  m_MatchHost: mm.unet.unity3d.com
-  m_MatchPort: 443
-  isNetworkActive: 0
-  matchMaker: {fileID: 0}
-  matchName: default
-  matchSize: 4
---- !u!114 &11451254
+--- !u!114 &11464306
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -93,13 +48,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 137150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 227461547, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 448c02502da78ce428225e14829c4d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  showGUI: 1
-  offsetX: 0
-  offsetY: 0
+  playerPrefab: {fileID: 130908, guid: 8f3fea2b5b22c954892b46b9c384fd5c, type: 2}
+  createPrefabs: []
+  ip: localhost
+  port: 7777
+  connectionNum: 2
+  roomName: HadeMekaBattle
+  roomTypeName: HadeMekaBattleType
+  connectTimeOver: 2
+  isNetworking: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

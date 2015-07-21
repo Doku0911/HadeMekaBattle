@@ -79,7 +79,8 @@ public class BulletShooter : MonoBehaviour {
 		{
 			energyManager = null;
 		}
-		
+
+        CreateIntervalChange();
 
         // プレハブを取得
         bullet = (GameObject)Resources.Load(("Prefabs/" + bulletTable[id]));
@@ -88,28 +89,37 @@ public class BulletShooter : MonoBehaviour {
             Debug.Log("bullet is NULL!!");
         }
 
-        // ファイアレートをセット
-        fireRate = BulletDataBase.GetData(id).fireRate;
-        if(fireRate <= -1 || fireRate == 0.0f)
-        {
-            Debug.Log("firerate is failed");
-        }
-        createInterval = (1.0f / fireRate);
-
         // 弾数をセット
         if (BulletDataBase.GetData(id).bulletNumber != 0)
         {
             maxBulletNumber = bulletNumber = BulletDataBase.GetData(id).bulletNumber;
         }
 
+
         // エフェクトを取得
         //effect = GetEffect(bullet);
 	}
-	
+
+    void CreateIntervalChange()
+    {
+        // ファイアレートをセット
+        fireRate = BulletDataBase.GetData(id).fireRate;
+        if (fireRate <= -1 || fireRate == 0.0f)
+        {
+            Debug.Log("firerate is failed");
+        }
+        createInterval = (1.0f / fireRate);
+    }
+
 	// Update is called once per frame
 	void Update () 
     {
         // CreateBulletが呼ばれていない間の処理
+
+        if (BulletDataBase.IsChangedKeyDown())
+        {
+            CreateIntervalChange();
+        }
 
     }
 

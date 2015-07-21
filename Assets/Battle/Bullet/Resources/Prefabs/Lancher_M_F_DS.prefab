@@ -17,6 +17,7 @@ GameObject:
   - 114: {fileID: 11439020}
   - 114: {fileID: 11490602}
   - 135: {fileID: 13507838}
+  - 114: {fileID: 11474586}
   m_Layer: 0
   m_Name: Lancher_M_F_DS
   m_TagString: Untagged
@@ -126,6 +127,17 @@ MonoBehaviour:
     i15: 145
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &11474586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f03236e710f3142bdbe1d2bdb4b960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11475050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ab7e3e6dee024ca121f5847a9d80f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponID: 0
+  weaponID: 30
   vectorRotationY: -.5
   rotationSpeed: 15
 --- !u!114 &11490602
@@ -182,7 +194,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: weaponID
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 193848}

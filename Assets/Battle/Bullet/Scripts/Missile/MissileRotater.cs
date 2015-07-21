@@ -8,11 +8,17 @@ public class MissileRotater : MonoBehaviour {
 	MissilePalametar missilePalametar = null;
  
     // ホーミングをするか否か
-	private bool homingFlag = true;	
+	private bool homingFlag = true;
+
+    Vector3 vectorTarget;
+    Vector3 vectorForward;
+
+
 
 	// Use this for initialization
 	void Start () {
 		missilePalametar = this.gameObject.GetComponent<MissilePalametar>();
+        vectorTarget = GameObject.Find("Cube").transform.position;
 	}
 	
 	// Update is called once per frame
@@ -27,9 +33,10 @@ public class MissileRotater : MonoBehaviour {
 		//if(missilePalametar.GetTargetObject == null) return;
 
 		// 回転処理
-        Vector3 vectorTarget = Vector3.zero;
+        //Vector3 vectorTarget = Vector3.zero;
+        
         //Vector3 vectorTarget = missilePalametar.GetTargetObject.transform.position - this.transform.position;	// ターゲットへのベクトル
-        Vector3		vectorForward = this.transform.TransformDirection(Vector3.forward);								// 弾の正面ベクトル
+        vectorForward = this.transform.TransformDirection(Vector3.forward);								// 弾の正面ベクトル
 		float		angleDifference = Vector3.Angle(vectorTarget,vectorForward);									// ターゲットまでの角度
 		float		angleAdd = (missilePalametar.RotationSpeed * Time.deltaTime);								// 回転角
 		Quaternion	rotationTarget = Quaternion.LookRotation(vectorTarget);											// ターゲットへ向けるクォータニオン

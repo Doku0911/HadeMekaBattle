@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e314abf31918e4b4aaa3cb20a0b4fe8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 23
+  id: 3
   weaponPosition: {x: -1.5, y: 1, z: 1.5}
 --- !u!114 &11421810
 MonoBehaviour:
@@ -3082,7 +3082,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: id
-      value: 23
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

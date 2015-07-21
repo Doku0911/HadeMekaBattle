@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class BulletDataBase : MonoBehaviour {
 
@@ -8,6 +9,11 @@ public class BulletDataBase : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+        LoadingToJson();
+    }
+
+    void LoadingToJson()
+    {
         var json = Resources.Load("DataBase/BulletData") as TextAsset;
 
         if (string.IsNullOrEmpty(json.text))
@@ -32,10 +38,24 @@ public class BulletDataBase : MonoBehaviour {
 
     }
 
+    public static bool IsChangedKeyDown()
+    {
+        return Input.GetKeyDown(KeyCode.L);
+    }
+
+    void Update()
+    {
+        if (IsChangedKeyDown())
+        {
+            LoadingToJson();
+        }
+    }
+
     public static BulletPalamaterData GetData(BuildManager.WeaponID id)
     {
         var weapon = data.Find(i => i.weaponID == id);
 
         return weapon;
     }
+
 }

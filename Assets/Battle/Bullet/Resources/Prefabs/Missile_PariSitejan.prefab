@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 447f91d7f96b92846b31c5aefbd70d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponID: 0
+  weaponID: 20
   targetObject: {fileID: 0}
   rotationSpeed: 90
   finalApproachRange: 5
@@ -195,7 +195,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: weaponID
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 158104}

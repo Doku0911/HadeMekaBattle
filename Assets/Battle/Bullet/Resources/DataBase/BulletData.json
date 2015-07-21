@@ -2,16 +2,16 @@
     {
         "weaponID": 0,
         "attackType": 1,
-        "speed": 10,
-        "fireRate": 60,
+        "speed": 200,
+        "fireRate": 30,
         "power": 6,
         "bulletNumber": 300
     },
     {
         "weaponID": 1,
         "attackType": 1,
-        "speed": 10,
-        "fireRate": 36,
+        "speed": 70,
+        "fireRate": 10,
         "power": 24,
         "bulletNumber": 400
     },
@@ -34,8 +34,8 @@
     {
         "weaponID": 10,
         "attackType": 1,
-        "speed": 25,
-        "fireRate": 12,
+        "speed": 220,
+        "fireRate": 10,
         "power": 48,
         "bulletNumber": 300
     },
@@ -58,8 +58,8 @@
     {
         "weaponID": 20,
         "attackType": 0,
-        "speed": 15,
-        "fireRate": 36,
+        "speed": 40,
+        "fireRate": 30,
         "power": 60,
         "bulletNumber": 50
     },
@@ -82,7 +82,7 @@
     {
         "weaponID": 23,
         "attackType": 1,
-        "speed": 20,
+        "speed": 160,
         "fireRate": 48,
         "power": 24,
         "bulletNumber": 80
@@ -90,8 +90,8 @@
     {
         "weaponID": 30,
         "attackType": 1,
-        "speed": 5,
-        "fireRate": 120,
+        "speed": 120,
+        "fireRate": 2,
         "power": 60,
         "bulletNumber": 10
     },
@@ -106,8 +106,8 @@
     {
         "weaponID": 32,
         "attackType": 0,
-        "speed": 20,
-        "fireRate": 36,
+        "speed": 55,
+        "fireRate": 10,
         "power": 36,
         "bulletNumber": 30
     }
