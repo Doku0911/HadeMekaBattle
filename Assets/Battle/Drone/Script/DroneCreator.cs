@@ -20,7 +20,7 @@ public class DroneCreator : MonoBehaviour
             var index = Random.Range(0, DroneType.Count);
             //Debug.Log("TypeCount" + DroneType.Count);
 
-            var clone = Network.Instantiate(DroneType[index], gameObject.transform.position, Quaternion.identity, 0);
+            var clone = NetworkUtility.GameObjectInstantiate(DroneType[index], gameObject.transform.position, Quaternion.identity, 0);
 
             canCreate = false;
         }

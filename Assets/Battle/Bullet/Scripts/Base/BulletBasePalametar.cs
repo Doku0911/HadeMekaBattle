@@ -44,7 +44,7 @@ public class BulletBasePalametar : MonoBehaviour {
         checker.Palametar = this;
         checker.Effect = effect;
 
-        GameObject clone = Network.Instantiate (bullet, this.transform.position, this.transform.rotation, 0) as GameObject;
+        GameObject clone = NetworkUtility.GameObjectInstantiate (bullet, this.transform.position, this.transform.rotation, 0) as GameObject;
         clone.transform.parent = this.gameObject.transform;
     }
 }
