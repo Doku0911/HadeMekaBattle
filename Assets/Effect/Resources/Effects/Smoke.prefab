@@ -8,8 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 478024}
-  - 114: {fileID: 11468616}
-  - 114: {fileID: 11430670}
   - 148: {fileID: 14807338}
   - 114: {fileID: 11455964}
   - 114: {fileID: 11474402}
@@ -32,17 +30,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11430670
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5593fda86cbb2ad4487df06a9ae763f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11455964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,20 +62,6 @@ MonoBehaviour:
     i15: 145
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &11468616
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50091075b6bce714bbcd73abc4eee722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectName: Smoke
-  playOnStart: 1
-  loop: 0
 --- !u!114 &11474402
 MonoBehaviour:
   m_ObjectHideFlags: 1

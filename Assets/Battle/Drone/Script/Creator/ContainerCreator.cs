@@ -41,7 +41,7 @@ public class ContainerCreator : MonoBehaviour
 
     void Create(Transform _positionObjct)
     {
-        var clone = Network.Instantiate(containerPrefab,_positionObjct.position, Quaternion.identity, 0);
+        var clone = NetworkUtility.GameObjectInstantiate(containerPrefab,_positionObjct.position, Quaternion.identity, 0);
     }
 
 }

@@ -30,6 +30,15 @@ public class NetworkManagerSetup : MonoBehaviour {
 
     EnemyListManager enemyListManager = null;
 
+
+    [SerializeField]
+    bool isNetworking = true;
+
+    /// <summary>
+    /// ネットワークをするかどうか
+    /// </summary>
+    public bool IsNetworking { get { return isNetworking; } }
+
     bool connected = false;
     bool isInitializeServer = false;
 
@@ -39,28 +48,34 @@ public class NetworkManagerSetup : MonoBehaviour {
     {
         foreach (var obj in createPrefabs)
         {
-            Network.Instantiate(obj, obj.transform.position, obj.transform.rotation, 0);
+            NetworkUtility.GameObjectInstantiate(obj, obj.transform.position, obj.transform.rotation, 0);
         }
     }
 
     //サーバ立ち上げ時に呼ばれるメソッド
     public void OnServerInitialized()
     {
-        Network.Instantiate(playerPrefab, playerPrefab.transform.position, playerPrefab.transform.rotation, 1);
+        if (!isNetworking) return;
+
+        NetworkUtility.GameObjectInstantiate(playerPrefab, playerPrefab.transform.position, playerPrefab.transform.rotation, 1);
     }
 
     //サーバに接続したときに呼ばれるメソッド
     public void OnConnectedToServer()
     {
-        Network.Instantiate(playerPrefab, playerPrefab.transform.position, playerPrefab.transform.rotation, 2);
+        if (!isNetworking) return;
+
+        NetworkUtility.GameObjectInstantiate(playerPrefab, playerPrefab.transform.position, playerPrefab.transform.rotation, 2);
     }
 
     /// <summary>
     /// クライアントのプレーヤが切断した時に実行されます
     /// </summary>
     /// <param name="player"></param>
-    public void OnPlayerDisconnected(NetworkPlayer player) 
+    public void OnPlayerDisconnected(NetworkPlayer player)
     {
+        if (!isNetworking) return;
+
         Network.RemoveRPCs(player);
         Network.DestroyPlayerObjects(player);
         enemyListManager.RefreshList();
@@ -69,13 +84,22 @@ public class NetworkManagerSetup : MonoBehaviour {
 	// Use this for initialization
     void Start()
     {
-        StartCoroutine(WaitRequestHostList());
-        StartCoroutine(WaitInitializeServer());
-        enemyListManager = GameObject.Find("EnemyManager").GetComponent<EnemyListManager>();
+        if (!isNetworking)
+        {
+            NetworkUtility.GameObjectInstantiate(playerPrefab, playerPrefab.transform.position, playerPrefab.transform.rotation, 1);
+        }
+        else
+        {
+            StartCoroutine(WaitRequestHostList());
+            StartCoroutine(WaitInitializeServer());
+            enemyListManager = GameObject.Find("EnemyManager").GetComponent<EnemyListManager>();
+        }
     }
 
-    public void OnGUI()
+    void OnGUI()
     {
+        if (!isNetworking) return;
+
         if (Network.isServer)
             GUI.Label(new Rect(0, 0, 200, 100), "Server");
 
@@ -128,7 +152,7 @@ public class NetworkManagerSetup : MonoBehaviour {
     void ClientConnect()
     {
         HostData[] data = MasterServer.PollHostList();
-        // Go through all the hosts in the host list
+
         foreach (var element in data)
         {
             if (!connected)
@@ -140,7 +164,10 @@ public class NetworkManagerSetup : MonoBehaviour {
 
     }
     // Update is called once per frame
-	void Update () {
+	void Update () 
+    {
+        if (!isNetworking) return;
+
         InitializeServer();
         ClientConnect();
 	}

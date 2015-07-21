@@ -8,8 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415910}
-  - 114: {fileID: 11454526}
-  - 114: {fileID: 11486602}
   - 148: {fileID: 14891266}
   - 114: {fileID: 11453104}
   - 114: {fileID: 11492834}
@@ -64,31 +62,6 @@ MonoBehaviour:
     i15: 54
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &11454526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50091075b6bce714bbcd73abc4eee722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectName: PowerDefence
-  playOnStart: 1
-  loop: 0
---- !u!114 &11486602
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5593fda86cbb2ad4487df06a9ae763f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11492834
 MonoBehaviour:
   m_ObjectHideFlags: 1

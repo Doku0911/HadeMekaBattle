@@ -43,7 +43,7 @@ public class HitChecker : MonoBehaviour {
         if (collision.gameObject.GetComponent<NetworkView>().isMine == true) return;
 
         // エフェクト生成
-        EffekseerEmitter.Create(effect, this.transform.position);
+        NetworkUtility.GameObjectInstantiate(effect, this.transform.position);
 
         // 弾を消す
         Destroy(this.gameObject);

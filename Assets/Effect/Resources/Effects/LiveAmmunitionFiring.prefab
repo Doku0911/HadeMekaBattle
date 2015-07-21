@@ -8,8 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 422210}
-  - 114: {fileID: 11492288}
-  - 114: {fileID: 11414416}
   - 148: {fileID: 14893906}
   - 114: {fileID: 11424076}
   - 114: {fileID: 11431796}
@@ -32,17 +30,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11414416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5593fda86cbb2ad4487df06a9ae763f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11424076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,20 +82,6 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &11492288
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50091075b6bce714bbcd73abc4eee722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectName: LiveAmmunitionFiring
-  playOnStart: 1
-  loop: 0
 --- !u!148 &14893906
 NetworkView:
   m_ObjectHideFlags: 1

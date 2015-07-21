@@ -135,9 +135,9 @@ public class BulletShooter : MonoBehaviour {
 
 		// 生成する
 		GameObject obj;
-		obj = Network.Instantiate (bullet, this.transform.position + MuzzlePosition, this.transform.rotation, 0) as GameObject;
+		obj = NetworkUtility.GameObjectInstantiate (bullet, this.transform.position + MuzzlePosition, this.transform.rotation, 0) as GameObject;
 
-        EffekseerEmitter.Create(effect, this.transform.position + MuzzlePosition);
+        NetworkUtility.GameObjectInstantiate(effect, this.transform.position + MuzzlePosition);
 
         GetPalameterLoading(obj);
 
